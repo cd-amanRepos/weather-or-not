@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+                     xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/7fc87d8fcc.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Dashboard</h1>
+    <!-- <div class="card">
+      <div class="name">Aman Thapliyal</div>
+      <div class="current_location">Indirapuram</div>
+    </div> -->
+    <div class="wrapper">
+      <table>
+        <tr class="headings">
+          <th>Task</th>
+          <th>Destination</th>
+          <th>Schedule</th>
+        </tr>
+        <tr th:each = "task : ${tasks}">
+          <td th:text="${task.name}"></td>
+          <td th:text="${task.destination}"></td>
+          <td th:text="${dateAndTimeToReach}">
+            <span class="icons"><i class="fa fa-bell" aria-hidden="true"></i> <i class="far fa-times-circle"></i></span>
+          </td>
+        </tr>
+      </table>
+      <div class="actions">
+        <i class="fas fa-plus-circle"></i>
+    </div>
+    <!-- <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul> -->
+    </div>
+  </body>
+</html>

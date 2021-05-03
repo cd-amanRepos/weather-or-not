@@ -15,7 +15,9 @@ public class User {
     @GeneratedValue
     private long userId;
     private String username;
+    private String name;
     private String email;
+    private String password;
 
     @OneToOne
     @JoinColumn(name = "bucket_id")
